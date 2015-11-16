@@ -53,7 +53,8 @@ gulp.task('sass', function() {
       suffix: ".min",
       extname: ".css"
     }))
-    .pipe(gulp.dest("./app/assets/css"));
+    .pipe(gulp.dest("./app/assets/css"))
+    .pipe(browserSync.reload({stream: true}));
 
 });
 

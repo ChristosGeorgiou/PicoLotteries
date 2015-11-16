@@ -36,6 +36,8 @@
         .post(APP.CouchServer + '_session', {
           name: credentials.username,
           password: credentials.password,
+        }, {
+          IsSignIn: true
         })
         .then(function(response) {
           var AuthObj = {
@@ -44,10 +46,8 @@
           $cookies.putObject('AuthObj', AuthObj);
           service.AuthObj = AuthObj;
           deferred.resolve();
-
-        }, function(err) {
-          service.SignOut();
-          deferred.reject(err);
+        }, function(rejection) {
+          deferred.reject(rejection.data);
         });
 
       return deferred.promise;

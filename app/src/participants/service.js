@@ -19,7 +19,7 @@
     return service;
 
     function GetPLists(params) {
-      return $resource(APP.Service + "_design/participants/_view/all")
+      return $resource(APP.Service + "_design/models/_view/plists")
         .get()
         .$promise
         .then(function(data) {

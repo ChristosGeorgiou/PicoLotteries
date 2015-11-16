@@ -10,50 +10,56 @@
 <form ng-submit="vm.Save()" ng-class="{loading:vm.loading}">
 
   <div class="modal-body">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group well well-sm">
+          <label class="control-label" translate>List Name</label>
+          <input class="form-control" ng-model="vm.PList.Name" />
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+          <label class="control-label" translate>Participants</label>
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th class="col-md-1">A/A</th>
+                <th class="col-md-5">Name</th>
+                <th class="col-md-5">Email</th>
+                <th class="col-md-1"></th>
+              </tr>
+            </thead>
 
-    <div class="form-group">
-      <label class="control-label" translate>List Name</label>
-      <input class="form-control" ng-model="vm.PList.Name" />
+            <tbody>
+              <tr ng-repeat="Participant in vm.PList.Participants">
+                <td class="text-center">
+                  {{$index + 1}}.
+                </td>
+                <td>
+                  <input class="form-control input-xs" ng-model="Participant.Name" />
+                </td>
+                <td>
+                  <input class="form-control input-xs" ng-model="Participant.Email" />
+                </td>
+                <td class="text-center">
+                  <button tabindex="-1" class="btn btn-link btn-xs" ng-click="vm.RemoveParticipant($index)"><i class="fa fa-trash-o"></i></button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">
+                  <button class="btn btn-default btn-xs pull-right" ng-click="vm.AddParticipants()"><i class="fa fa-plus"></i> Add More</button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label" translate>Participants</label>
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th class="col-md-1">A/A</th>
-            <th class="col-md-6">Name</th>
-            <th class="col-md-4">Email</th>
-            <th class="col-md-1"></th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr ng-repeat="Participant in vm.PList.Participants">
-            <td class="text-center">
-              {{$index + 1}}.
-            </td>
-            <td>
-              <input class="form-control input-xs" ng-model="Participant.Name" />
-            </td>
-            <td>
-              <input class="form-control input-xs" ng-model="Participant.Email" />
-            </td>
-            <td class="text-center">
-                <button tabindex="-1" class="btn btn-link btn-xs" ng-click="vm.RemoveParticipant($index)"><i class="fa fa-trash-o"></i></button>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="4">
-              <button class="btn btn-default btn-xs pull-right" ng-click="vm.AddParticipants()"><i class="fa fa-plus"></i> Add More</button>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-
-    </div>
 
   </div>
 

@@ -7,7 +7,7 @@
       ANAUTHORIZED: {
         Type: "danger",
         Message: "You were signed out",
-        Details: "This happend because you tried to access a page that you are not authorized to.",
+        Details: "This happend because you tried to access a page that you are not authorized to",
       },
       SIGNOUT: {
         Type: "success",
@@ -16,7 +16,7 @@
       },
       REGISTERED: {
         Type: "success",
-        Message: "Your account is ready, you can login now.",
+        Message: "Your account is ready, you can login now",
         Details: false,
       },
       AUTHERROR: {
@@ -26,8 +26,13 @@
       },
       UNAVAILABLE: {
         Type: "danger",
-        Message: "Service is not available.",
+        Message: "Service is not available",
         Details: "Please try again later. If the problem insist, contact your system administrator",
+      },
+      UNAUTHORIZED: {
+        Type: "danger",
+        Message: "Name or password is incorrect",
+        Details: "Please try again",
       },
     });
 

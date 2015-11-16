@@ -6,6 +6,7 @@
     'app.auth',
     'app.lotteries',
     'app.participants',
+    'app.settings',
     'app._common',
 
 

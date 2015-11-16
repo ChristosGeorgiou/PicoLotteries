@@ -3,23 +3,23 @@
   'use strict';
 
   angular
-    .module('app.lotteries')
-    .factory('LotteriesService', LotteriesService);
+    .module('app.settings')
+    .factory('SettingsService', SettingsService);
 
   /* @ngInject */
-  function LotteriesService($resource) {
+  function SettingsService($resource) {
 
     var service = {
-      GetLotteries: GetLotteries,
-      GetLottery: GetLottery,
-      SaveLottery: SaveLottery,
-      DeleteLottery: DeleteLottery,
+      GetSettings: GetSettings,
+      GetSetting: GetSetting,
+      SaveSetting: SaveSetting,
+      DeleteSetting: DeleteSetting,
     }
 
     return service;
 
-    function GetLotteries(params) {
-      return $resource(APP.Service + "_design/models/_view/lotteries")
+    function GetSettings(params) {
+      return $resource(APP.Service + "_design/models/_view/Settings")
         .get()
         .$promise
         .then(function(data) {
@@ -35,7 +35,7 @@
         });
     }
 
-    function GetLottery(id) {
+    function GetSetting(id) {
       return $resource(APP.Service + id)
         .get()
         .$promise
@@ -44,23 +44,23 @@
         });
     }
 
-    function SaveLottery(lottery) {
-      lottery.Type = "Lottery";
+    function SaveSetting(Setting) {
+      Setting.Type = "Setting";
       return $resource(APP.Service)
-        .save(lottery)
+        .save(Setting)
         .$promise
         .then(function(data) {
           return data;
         });
     }
 
-    function DeleteLottery(lottery) {
+    function DeleteSetting(Setting) {
 
-      lottery._deleted = true;
-      lottery.DeletedAt = new Date();
+      Setting._deleted = true;
+      Setting.DeletedAt = new Date();
 
       return $resource(APP.Service)
-        .save(lottery)
+        .save(Setting)
         .$promise;
     }
 

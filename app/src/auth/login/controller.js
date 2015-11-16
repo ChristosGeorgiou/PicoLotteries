@@ -41,13 +41,9 @@
         .SignIn(vm.credentials)
         .then(function(response) {
           $state.go("app.lotteries.overview");
-        }, function(error) {
-          if (error) {
-            vm.Alert = LoginMessages.AUTHERROR;
-            vm.Alert.Details = error.data.error_description;
-          } else {
-            vm.Alert = LoginMessages.UNAVAILABLE;
-          }
+        }, function(rejection) {
+          console.log(rejection);
+          vm.Alert = LoginMessages[rejection.error.toUpperCase()];
         })
         .finally(function() {
           vm.loading = false;
