@@ -1,0 +1,4 @@
+/node_modules/
+/app/assets/css/style.min.css
+/app/assets/scripts/app.min.js
+/app/assets/scripts/app.min.js.map

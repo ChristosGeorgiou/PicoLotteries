@@ -1,0 +1,14 @@
+$buttonColors: primary $colorPrimary, info #49AFCD, success #5BB75B, warning #FAA732, danger #DA4F49, inverse #363636;
+@each $className in $buttonColors {
+  .btn-#{nth($className, 1)} {
+    $buttonColor: nth($className, 2);
+    @extend %darkTextColor;
+    background: $buttonColor;
+    border-color: darken($buttonColor, 10%);
+    &:hover {
+      @extend %darkTextColor;
+      background: lighten($buttonColor, 5%);
+      border-color:darken($buttonColor, 5%);
+    }
+  }
+}

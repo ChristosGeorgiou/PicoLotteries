@@ -1,0 +1,21 @@
+{
+  "name": "PicoLotteries",
+  "description": "PicoLottery",
+  "version": "0.1.0",
+  "dependencies": {
+    "browser-sync": "^2.10.0",
+    "connect-modrewrite": "^0.8.2",
+    "gulp": "^3.9.0",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-clean-css": "^1.0.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.7",
+    "minimatch": "^3.0.0"
+  },
+  "devDependencies": {}
+}

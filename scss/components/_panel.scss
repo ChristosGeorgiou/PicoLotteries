@@ -1,0 +1,6 @@
+.panel-primary {
+  .panel-heading {
+    background: $colorPrimary;
+    border-color: darken($colorPrimary, 10%);
+  }
+}

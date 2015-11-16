@@ -1,0 +1,32 @@
+<div class="btn-toolbar">
+  <div class="btn-group btn-group-xs">
+    <button class="btn btn-primary" ng-click="vm.AddLottery()">
+      <span class="fa fa-plus fa-fw"></span> New Lottery
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-8" ng-class="{loading:vm.loading}">
+
+    <div class="empty" ng-if="!vm.Lotteries.length && !vm.loading">
+      No lotteries yet
+    </div>
+
+    <div class="list-group" ng-if="vm.Lotteries.length">
+      <div class="list-group-item" ng-repeat="Lottery in vm.Lotteries">
+        <a href="" ng-click="vm.DeleteLottery(Lottery)" class="text-danger pull-right"><i class="fa fa-trash"></i></button>
+        <a ui-sref="app.lotteries.Lottery({ID:Lottery._id})">
+          <h4 class="list-group-item-heading">{{::Lottery.Name}}</h4>
+        </a>
+        <p class="list-group-item-text">Created at {{::Lottery.DrewAt|date:'short'}}, {{::Lottery.DrewAt|fromNow}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-sm-4">
+    <pre>{{vm.Lotteries|json:2}}</pre>
+  </div>
+
+</div>

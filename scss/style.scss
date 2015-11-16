@@ -1,0 +1,89 @@
+$colorPrimary: #338CB7;
+@import "components/navbar";
+@import "components/buttons";
+@import "components/panel";
+body {
+  padding-bottom: 20px;
+  background: #FAFAFA;
+  @media (min-width: 768px) {
+    padding-top: 15px;
+  }
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  background: #EEE;
+  width: 100%;
+  left: 0;
+  display: block;
+  text-align: center;
+  padding: 2px 0;
+  font-size: 0.7em;
+  border-top: solid 1px #FFF;
+  color: #666;
+}
+.navbar {
+  margin: 0;
+  .navbar-brand {
+    color: #EEE !important;
+    min-width: 180px;
+    line-height: 0.9em;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    border-right: solid 1px darken($colorPrimary,5%);
+    small {
+      display: block;
+      font-size: 10px;
+      color: lighten($colorPrimary,35%);;
+    }
+    i {
+      float: left;
+      margin: -2px 2px 0 -8px;
+      font-size: 1.8em;
+      color: #FAFAFA;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+.btn-toolbar {
+  margin: 7px 0;
+  background: #F3F3F3;
+  border:solid 1px #EEE;
+  padding: 5px 5px 5px 0;
+  border-radius: 5px;
+}
+.empty {
+  text-align: center;
+  font-size: 2em;
+  background: #EEE;
+  border: solid 1px #DDD;
+  border-radius: 5px;
+  padding: 25px 0;
+  color: #AAA;
+}
+.input-xs {
+  padding: 0 5px;
+  height: 22px;
+}
+.modal-footer {
+  padding: 7px 15px;
+}
+.control-label {
+  font-weight: 400;
+}
+.container-login {
+  width: 100%;
+  padding: 5px;
+  @media (min-width: 300px) {
+    padding-top: 25px;
+    width: 300px;
+  }
+  .panel {
+    border: solid 1px #FFF;
+    box-shadow: 0 0 15px #CCC;
+  }
+}
