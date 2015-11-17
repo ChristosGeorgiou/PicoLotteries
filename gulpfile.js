@@ -12,33 +12,33 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var minimatch = require('minimatch');
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['watch']);
 
-gulp.task('serve', ['sass', 'build'], function() {
+gulp.task('watch', ['sass', 'build'], function() {
 
-  browserSync.init({
-    server: {
-      baseDir: "./app"
-    },
-    notify: false,
-    reloadOnRestart: true,
-    open: false,
-    online: false,
-    logLevel: "info",
-    ui: false,
-    middleware: [function(req, res, next) {
-      //console.log("REQUEST", req.url);
-      if (minimatch(req.url, '**/*.json')) {
-        res.setHeader('Content-Type', 'application/json; charset=utf-8');
-      }
-      next();
-    }, connectModrewrite([
-      '^[^\\.]*$ /index.html [L]'
-    ])]
-  });
+  // browserSync.init({
+  //   server: {
+  //     baseDir: "./client"
+  //   },
+  //   notify: false,
+  //   reloadOnRestart: true,
+  //   open: false,
+  //   online: false,
+  //   logLevel: "info",
+  //   ui: false,
+  //   middleware: [function(req, res, next) {
+  //     //console.log("REQUEST", req.url);
+  //     if (minimatch(req.url, '**/*.json')) {
+  //       res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  //     }
+  //     next();
+  //   }, connectModrewrite([
+  //     '^[^\\.]*$ /index.html [L]'
+  //   ])]
+  // });
 
   gulp.watch("./scss/**/**.*", ['sass']);
-  gulp.watch("./app/src/**/*.js", ['build']);
+  gulp.watch("./client/src/**/*.js", ['build']);
 
 });
 
@@ -53,14 +53,14 @@ gulp.task('sass', function() {
       suffix: ".min",
       extname: ".css"
     }))
-    .pipe(gulp.dest("./app/assets/css"))
+    .pipe(gulp.dest("./client/assets/css"))
     .pipe(browserSync.reload({stream: true}));
 
 });
 
 gulp.task('build', function() {
 
-  return gulp.src("./app/src/**/*.js")
+  return gulp.src("./client/src/**/*.js")
     .pipe(angularFilesort())
     .pipe(sourcemaps.init())
     .pipe(concat("app.min.js", {
@@ -73,6 +73,6 @@ gulp.task('build', function() {
       mangle: false
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest("./app/assets/scripts"));
+    .pipe(gulp.dest("./client/assets/scripts"));
 
 });

@@ -1,0 +1,10 @@
+MySQL 5.5 database added.  Please make note of these credentials:
+
+       Root User: adminH7RANBZ
+   Root Password: 6xirp5KuEhAL
+   Database Name: picolotteries
+
+Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
+
+You can manage your new MySQL database by also embedding phpmyadmin.
+The phpmyadmin username and password will be the same as the MySQL credentials above.
