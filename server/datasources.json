@@ -1,6 +1,10 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "mysql",
+    "database": "picolotteries",
+    "host": "127.0.0.1",
+    "password": "1234",
+    "username": "root"
   }
 }
