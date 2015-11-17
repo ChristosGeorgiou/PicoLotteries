@@ -3,6 +3,7 @@ $colorPrimary: #283593;
 @import "components/buttons";
 @import "components/panel";
 @import "components/loading";
+@import "components/print";
 body {
   padding-bottom: 20px;
   background: #FAFAFA;
@@ -55,12 +56,16 @@ section {
 
   // border-radius: 0;
 }
-.btn-toolbar {
+.btn-toolbar,
+.breadcrumb {
   margin: 0 0 7px;
   background: #F3F3F3;
   border: solid 1px #EEE;
-  padding: 5px 5px 5px 0;
+  padding: 5px;
   border-radius: 5px;
+  .btn-group:first-child {
+    margin-left: 0;
+  }
 }
 .empty {
   text-align: center;
@@ -79,6 +84,7 @@ section {
   padding: 7px 15px;
 }
 .control-label {
+  font-size: 1.2em;
   font-weight: 400;
 }
 .container-login {
@@ -91,5 +97,11 @@ section {
   .panel {
     border: solid 1px #FFF;
     box-shadow: 0 0 15px #CCC;
+  }
+}
+.modal-md {
+  @media (min-width: 500px) {
+    margin: 30px auto;
+    width: 450px;
   }
 }

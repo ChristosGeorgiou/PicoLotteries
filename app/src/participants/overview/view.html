@@ -7,8 +7,8 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-8" ng-class="{loading:vm.loading}">
-    
+  <div class="col-sm-12" ng-class="{loading:vm.loading}">
+
     <div class="empty" ng-if="!vm.PLists.length && !vm.loading">
       No participants lists yet
     </div>
@@ -19,14 +19,12 @@
         <a href="" ng-click="vm.ViewPList(PList)">
           <h4 class="list-group-item-heading">{{::PList.Name}}</h4>
         </a>
-        <p class="list-group-item-text">Created at {{::PList.CreatedAt|date:'short'}}, with {{::PList.Participants.length}} participants</p>
+        <p class="list-group-item-text">
+          Created at <strong>{{::PList.CreatedAt|date:'medium'}}</strong>, with <strong>{{::PList.Participants.length}}</strong> participants
+        </p>
       </div>
     </div>
 
-  </div>
-
-  <div class="col-sm-4">
-    <pre>{{vm.PLists|json:2}}</pre>
   </div>
 
 </div>

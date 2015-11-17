@@ -7,7 +7,7 @@
       ANAUTHORIZED: {
         Type: "danger",
         Message: "You were signed out",
-        Details: "This happend because you tried to access a page that you are not authorized to",
+        Details: "Probably your session was timed out",
       },
       SIGNOUT: {
         Type: "success",

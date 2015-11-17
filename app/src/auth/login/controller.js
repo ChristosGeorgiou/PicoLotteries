@@ -17,8 +17,8 @@
     function activate() {
 
       switch ($stateParams.ref) {
-        case "au": //Anauthorized
-          vm.Alert = LoginMessages.ANAUTHORIZED;
+        case "au": //Unauthorized
+          vm.Alert = LoginMessages.UNAUTHORIZED;
           break;
         case "so": //Sign Out
           vm.Alert = LoginMessages.SIGNOUT;
