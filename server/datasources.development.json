@@ -1,0 +1,10 @@
+{
+  "db": {
+    "host": "127.0.0.1",
+    "database": "picolotteries",
+    "username": "root",
+    "password": "1234",
+    "name": "db",
+    "connector": "mysql"
+  }
+}
