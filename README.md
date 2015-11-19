@@ -1,3 +1,3 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+# PicoLotteries
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+With this pico application you an manage and perform draws of lotteries.

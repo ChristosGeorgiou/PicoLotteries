@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <button class=close n type="button" class="close" ng-click="$close()" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title" translate>
+    New Lottery
+  </h4>
+</div>
+
+<form ng-submit="vm.Save()" ng-class="{loading:vm.loading}">
+
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label class="control-label" translate>Name</label>
+      <input class="form-control" required ng-model="vm.Lottery.Name" />
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" translate>Participants</label>
+      <select class="form-control" required ng-model="vm.Lottery.Participants" ng-options="List.Participants as List.Name for List in vm.PLists">
+        <option value="">-- Select --</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-block btn-sm btn-success" type="submit">Perform Draw</button>
+  </div>
+
+</form>

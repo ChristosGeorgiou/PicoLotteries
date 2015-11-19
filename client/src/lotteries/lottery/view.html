@@ -1,0 +1,63 @@
+<ol class="breadcrumb">
+  <li><a ui-sref="app.lotteries.overview">Lotteries</a></li>
+  <li class="active">{{vm.Lottery.Name}}</li>
+</ol>
+
+<div class="row" ng-class="{loading:vm.loading}">
+  <div class="col-sm-4">
+
+    <div class="well">
+      <dl>
+        <dt>Name</dt>
+        <dd>{{::vm.Lottery.Name}}</dd>
+        <dt>Drew At</dt>
+        <dd>{{::vm.Lottery.DrewAt|date:'medium'}}</dd>
+      </dl>
+      <button class="btn btn-sm btn-primary btn-block" ng-print print-element-id="printableResults">
+        Print Draw
+      </button>
+    </div>
+
+  </div>
+  <div class="col-sm-8">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Results
+        </h3>
+      </div>
+      <div class="list-group" ng-if="vm.Lottery">
+        <div class="list-group-item" ng-repeat="Participant in vm.Lottery.Participants">
+          {{$index+1}}. {{::Participant.Name}}, {{::Participant.Email}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="printableResults" class="visible-print-block">
+  <div class="page-header">
+    <h2>{{::vm.Lottery.Name}}
+      <small>{{::vm.Lottery.DrewAt|date:'medium'}}</small>
+    </h2>
+  </div>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>A/A</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="Participant in vm.Lottery.Participants">
+        <td>{{$index+1}}</td>
+        <td>{{::Participant.Name}}</td>
+        <td>{{::Participant.Email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
