@@ -19,8 +19,7 @@
   "relations": {
     "participants": {
       "type": "hasMany",
-      "model": "Participant",
-      "foreignKey": "participantId"
+      "model": "Participant"
     }
   },
   "acls": [],
