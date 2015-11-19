@@ -41,10 +41,18 @@
         url: '/logout',
         template: "<ui-view/>",
         controller: function(User, $state) {
-          User.logout();
-          $state.go("auth.login", {
-            ref: "so"
-          });
+          User
+            .logout()
+            $promise
+            .then(function() {
+              $state.go("auth.login", {
+                ref: "so"
+              });
+            })
+            .finally(function() {
+              localStorage.clear();
+            })
+
         },
       }
     }];
