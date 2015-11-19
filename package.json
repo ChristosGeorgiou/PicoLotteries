@@ -1,10 +1,12 @@
 {
   "name": "PicoLotteries",
   "description": "With this pico application you an manage and perform draws of lotteries.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "server/server.js",
-  "scripts":{
-    "mig":"node bin/automigrate.js"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristosGeorgiou/PicoLotteries.git"
   },
   "dependencies": {
     "compression": "^1.0.3",
