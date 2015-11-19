@@ -52,7 +52,7 @@
     }
 
     function DeletePlist(id) {
-      Plists
+      PlistsService
         .DeletePlist(id)
         .then(function() {
           vm.LoadPlists();

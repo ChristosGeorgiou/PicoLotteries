@@ -20,7 +20,11 @@
 
     function GetPlists(params) {
       return Plist
-        .find()
+        .find({
+          filter: {
+            include: "participants"
+          }
+        })
         .$promise
         .then(function(data) {
           return _.sortBy(data, function(item) {
@@ -31,7 +35,12 @@
 
     function GetPlist(id) {
       return Plist
-        .findById(id)
+        .findById({
+          id: id,
+          filter: {
+            include: "participants"
+          }
+        })
         .$promise
         .then(function(item) {
           return item;
@@ -61,7 +70,9 @@
     function DeletePlist(id) {
 
       return Plist
-        .deleteById(id)
+        .deleteById({
+          id: id
+        })
         .$promise
         .then(function(item) {
           return item;
