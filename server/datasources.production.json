@@ -1,7 +1,7 @@
 {
   "db": {
     "name": "db",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "database": "picolotteries",
     "username": "adminH7RANBZ",
     "password": "6xirp5KuEhAL",
