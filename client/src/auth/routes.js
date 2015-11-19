@@ -43,14 +43,13 @@
         controller: function(User, $state) {
           User
             .logout()
-            $promise
-            .then(function() {
+            .$promise
+            .then(function() {})
+            .finally(function() {
+              localStorage.clear();
               $state.go("auth.login", {
                 ref: "so"
               });
-            })
-            .finally(function() {
-              localStorage.clear();
             })
 
         },
