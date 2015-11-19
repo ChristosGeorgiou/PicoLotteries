@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('app.participants')
-    .controller("PListFormController", PListFormController);
+    .module('app.plists')
+    .controller("PlistFormController", PlistFormController);
 
   /* @ngInject */
-  function PListFormController($modalInstance, ModalParams, ParticipantsService) {
+  function PlistFormController($modalInstance, ModalParams, PlistsService) {
     var vm = this;
 
-    vm.PList = {
+    vm.Plist = {
       Participants: [],
     };
 
@@ -22,11 +22,11 @@
     function activate() {
       if (ModalParams.ID) {
         vm.loading = true;
-        ParticipantsService
-          .GetPList(ModalParams.ID)
+        PlistsService
+          .GetPlist(ModalParams.ID)
           .then(function(data) {
-            vm.PList = data;
-            if (vm.PList.Participants.length === 0) {
+            vm.Plist = data;
+            if (vm.Plist.Participants.length === 0) {
               vm.AddParticipants();
             }
           })
@@ -40,17 +40,17 @@
 
     function AddParticipants() {
       for (var i = 0; i < 5; i++) {
-        vm.PList.Participants.push({});
+        vm.Plist.Participants.push({});
       }
     }
 
     function RemoveParticipant(index) {
-      vm.PList.Participants.splice(index, 1);
+      vm.Plist.Participants.splice(index, 1);
     }
 
     function Save() {
-      ParticipantsService
-        .SavePList(vm.PList)
+      PlistsService
+        .SavePlist(vm.Plist)
         .then(function() {
           $modalInstance.close();
         });

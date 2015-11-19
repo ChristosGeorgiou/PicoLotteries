@@ -4,7 +4,7 @@
 
   window.APP = {
     Project: "PicoLotteries",
-    Version: "0.1.5",
+    Version: "0.2.0",
   };
 
   angular.element(document).ready(function() {

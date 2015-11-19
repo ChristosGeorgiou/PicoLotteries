@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('app.participants', []);
+    .module('app.plists', []);
 })();

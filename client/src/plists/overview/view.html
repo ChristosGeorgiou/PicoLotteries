@@ -1,0 +1,32 @@
+<div class="btn-toolbar">
+  <div class="btn-group btn-group-xs">
+    <button class="btn btn-primary" ng-click="vm.AddPlist()">
+      <span class="fa fa-plus fa-fw"></span> New List
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12" ng-class="{loading:vm.loading}">
+
+    <div class="empty" ng-if="!vm.Plists.length && !vm.loading">
+      No participants lists yet
+    </div>
+
+    <div class="list-group" ng-if="vm.Plists.length">
+      <div class="list-group-item" ng-repeat="Plist in vm.Plists">
+        <a href="" ng-click="vm.DeletePlist(Plist.id)" class="text-danger pull-right"><i class="fa fa-trash"></i></button>
+        <a href="" ng-click="vm.ViewPlist(Plist.id)">
+          <h4 class="list-group-item-heading">{{::Plist.Name}}</h4>
+        </a>
+        <p class="list-group-item-text">
+          Created at
+          <strong>{{::Plist.CreatedAt|date:'medium'}}</strong>, with
+          <strong>{{::Plist.participants.length}}</strong> participants
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>

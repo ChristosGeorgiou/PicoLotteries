@@ -9,6 +9,10 @@
     "Name": {
       "type": "string",
       "required": true
+    },
+    "CreatedAt": {
+      "type": "date",
+      "required": false
     }
   },
   "validations": [],

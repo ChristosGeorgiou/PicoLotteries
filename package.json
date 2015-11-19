@@ -1,8 +1,11 @@
 {
   "name": "PicoLotteries",
-  "description": "PicoLottery",
-  "version": "0.1.5",
+  "description": "With this pico application you an manage and perform draws of lotteries.",
+  "version": "0.2.0",
   "main": "server/server.js",
+  "scripts":{
+    "mig":"node bin/automigrate.js"
+  },
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
@@ -11,11 +14,10 @@
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-mysql": "^2.2.0",
     "loopback-datasource-juggler": "^2.39.0",
+    "connect-modrewrite": "^0.8.2",
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.10.0",
-    "connect-modrewrite": "^0.8.2",
     "gulp": "^3.9.0",
     "gulp-angular-filesort": "^1.1.1",
     "gulp-clean-css": "^1.0.2",
