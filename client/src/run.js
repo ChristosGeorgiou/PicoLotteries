@@ -7,9 +7,7 @@
     .run(appRun);
 
   /* @ngInject */
-  function appRun($rootScope, $state, $stateParams, AuthService) {
-
-    AuthService.Init();
+  function appRun($rootScope, $state, $stateParams) {
 
     $rootScope.APP = APP;
 
@@ -19,6 +17,7 @@
         evt.preventDefault();
         $state.go(to.redirectTo, params);
       }
+      
     });
 
 

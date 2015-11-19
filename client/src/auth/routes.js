@@ -40,8 +40,8 @@
       config: {
         url: '/logout',
         template: "<ui-view/>",
-        controller: function(AuthService, $state) {
-          AuthService.SignOut();
+        controller: function(User, $state) {
+          User.logout();
           $state.go("auth.login", {
             ref: "so"
           });
