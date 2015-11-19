@@ -9,14 +9,17 @@
     "Name": {
       "type": "string",
       "required": true
+    },
+    "CreatedAt": {
+      "type": "date",
+      "required": false
     }
   },
   "validations": [],
   "relations": {
     "participants": {
       "type": "hasMany",
-      "model": "Participant",
-      "foreignKey": "participantId"
+      "model": "Participant"
     }
   },
   "acls": [],

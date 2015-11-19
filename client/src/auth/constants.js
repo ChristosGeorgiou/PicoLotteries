@@ -11,7 +11,7 @@
       },
       SIGNOUT: {
         Type: "success",
-        Message: "You were signed out successfully",
+        Message: "You were signed out",
         Details: "You may login again using the form",
       },
       REGISTERED: {

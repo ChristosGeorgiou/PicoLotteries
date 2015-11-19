@@ -40,11 +40,18 @@
       config: {
         url: '/logout',
         template: "<ui-view/>",
-        controller: function(AuthService, $state) {
-          AuthService.SignOut();
-          $state.go("auth.login", {
-            ref: "so"
-          });
+        controller: function(User, $state) {
+          User
+            .logout()
+            .$promise
+            .then(function() {})
+            .finally(function() {
+              localStorage.clear();
+              $state.go("auth.login", {
+                ref: "so"
+              });
+            })
+
         },
       }
     }];

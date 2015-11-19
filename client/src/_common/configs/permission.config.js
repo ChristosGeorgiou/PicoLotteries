@@ -7,10 +7,10 @@
     .run(PermissionsConfig);
 
   /* @ngInject */
-  function PermissionsConfig(configHelper, Permission, AuthService) {
+  function PermissionsConfig(configHelper, Permission, User) {
 
     Permission.defineRole('Anonymous', function() {
-      return !AuthService.AuthObj;
+      return !User.isAuthenticated();
     });
 
     configHelper.notifyConfig("Permissions", "Loaded");

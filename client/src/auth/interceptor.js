@@ -14,8 +14,8 @@
       responseError: function(rejection) {
         // console.log(rejection);
         if (rejection.status === 401 && !rejection.config.IsSignIn) {
-          var AuthService = $injector.get('AuthService');
-          AuthService.SignOut();
+          var User = $injector.get('User');
+          User.logout();
           var $state = $injector.get('$state');
           $state.go('auth.login', {
             ref: "au"

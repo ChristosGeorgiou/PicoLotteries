@@ -6,7 +6,7 @@
     .controller('AuthLoginController', AuthLoginController);
 
   /* @ngInject */
-  function AuthLoginController(AuthService, $stateParams, $state, LoginMessages, User) {
+  function AuthLoginController($stateParams, $state, LoginMessages, User) {
     var vm = this;
 
     vm.loading = false;
@@ -49,17 +49,7 @@
         .finally(function() {
           vm.loading = false;
         });
-      // AuthService
-      //   .SignIn(vm.credentials)
-      //   .then(function(response) {
-      //     $state.go("app.lotteries.overview");
-      //   }, function(rejection) {
-      //     console.log(rejection);
-      //     vm.Alert = LoginMessages[rejection.error.toUpperCase()];
-      //   })
-      //   .finally(function() {
-      //     vm.loading = false;
-      //   });
+        
     }
 
   }

@@ -25,8 +25,12 @@
       config: {
         abstract: true,
         templateUrl: 'src/_common/views/layout.html',
-        controller: function($scope, AuthService) {
-          $scope.username = AuthService.AuthObj.username;
+        controller: function($scope, User) {
+          User.getCurrent()
+            .$promise
+            .then(function(u) {
+              $scope.username = u.username;
+            });
         }
       }
     }];

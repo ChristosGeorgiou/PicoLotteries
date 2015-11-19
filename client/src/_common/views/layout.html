@@ -9,7 +9,7 @@
       </button>
       <div class="navbar-brand">
         <i class="fa fa-tags fa-fw"></i> {{APP.Project}}
-        <small>{{APP.Domain}}</small>
+        <small>v{{APP.Version}}</small>
       </div>
     </div>
 
@@ -20,7 +20,7 @@
           <a ui-sref="app.lotteries.overview"><i class="fa fa-cubes fa-fw"></i> Lotteries</a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="app.participants.overview"><i class="fa fa-users fa-fw"></i> Participants</a>
+          <a ui-sref="app.plists"><i class="fa fa-users fa-fw"></i> Lists</a>
         </li>
       </ul>
 
@@ -47,5 +47,5 @@
 <section ui-view class="container"></section>
 
 <footer class="container">
-  <p>2016 {{APP.Project}} v{{APP.Version}} by <a href="http://christosgeorgiou.gr">CG</a></p>
+  <p ng-include="'src/_common/views/footer.html'"></p>
 </footer>

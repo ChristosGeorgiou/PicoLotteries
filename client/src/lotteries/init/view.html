@@ -2,7 +2,7 @@
   <button class=close n type="button" class="close" ng-click="$close()" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <h4 class="modal-title" translate>
+  <h4 class="modal-title">
     New Lottery
   </h4>
 </div>
@@ -12,12 +12,12 @@
   <div class="modal-body">
 
     <div class="form-group">
-      <label class="control-label" translate>Name</label>
+      <label class="control-label">Name</label>
       <input class="form-control" required ng-model="vm.Lottery.Name" />
     </div>
 
     <div class="form-group">
-      <label class="control-label" translate>Participants</label>
+      <label class="control-label">Participants</label>
       <select class="form-control" required ng-model="vm.Lottery.Participants" ng-options="List.Participants as List.Name for List in vm.PLists">
         <option value="">-- Select --</option>
       </select>
