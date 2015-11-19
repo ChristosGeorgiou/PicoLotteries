@@ -15,8 +15,13 @@
   "session": {},
   "auth": {},
   "parse": {},
-  "routes": {},
+  "routes": {
+    "loopback#rest": {
+      "paths": ["${restApiRoot}"]
+    }
+  },
   "files": {
+    "./middleware/rewrite": {},
     "loopback#static": {
       "params": "$!../client"
     }

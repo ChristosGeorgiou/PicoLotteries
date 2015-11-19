@@ -31,5 +31,17 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Lottery": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Participant": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Plist": {
+    "dataSource": "db",
+    "public": true
   }
 }
