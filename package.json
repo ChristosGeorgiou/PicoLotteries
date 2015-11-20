@@ -1,7 +1,7 @@
 {
   "name": "PicoLotteries",
   "description": "With this pico application you an manage and perform draws of lotteries.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "server/server.js",
   "license": "MIT",
   "repository": {
