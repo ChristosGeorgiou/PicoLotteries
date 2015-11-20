@@ -1,10 +1,10 @@
 {
   "db": {
     "name": "db",
-    "host": "process.env.OPENSHIFT_MYSQL_DB_HOST",
+    "host": "127.2.18.130",
     "database": "picolotteries",
-    "username": "process.env.OPENSHIFT_MYSQL_DB_USERNAME",
-    "password": "process.env.OPENSHIFT_MYSQL_DB_PASSWORD",
+    "username": "adminH7RANBZ",
+    "password": "6xirp5KuEhAL",
     "connector": "mysql"
   }
 }
