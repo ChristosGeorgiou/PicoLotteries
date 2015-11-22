@@ -14,10 +14,6 @@
       GetPlist: GetPlist,
       SavePlist: SavePlist,
       DeletePlist: DeletePlist,
-      GetParticipants: GetParticipants,
-      GetParticipant: GetParticipant,
-      SaveParticipant: SaveParticipant,
-      DeleteParticipant: DeleteParticipant,
     }
 
     return service;
@@ -69,68 +65,6 @@
     function DeletePlist(id) {
 
       return Plist
-        .deleteById({
-          id: id
-        })
-        .$promise
-        .then(function(item) {
-          return item;
-        });
-
-    }
-
-
-    function GetParticipants(params) {
-      return Participant
-        .find({
-          filter: {
-            include: "participants"
-          }
-        })
-        .$promise
-        .then(function(data) {
-          return _.sortBy(data, function(item) {
-            return item.Name;
-          });
-        });
-    }
-
-    function GetParticipant(id) {
-      return Participant
-        .findById({
-          id: id,
-          filter: {
-            include: "participants"
-          }
-        })
-        .$promise
-        .then(function(item) {
-          return item;
-        });
-    }
-
-    function SaveParticipant(Participant) {
-
-      if (!Participant.id) {
-        Participant.CreatedAt = new Date();
-      }
-
-      Participant.participants = _.filter(Participant.Participants, function(item) {
-        return (item.Name || item.Email);
-      });
-
-      return Participant
-        .updateOrCreate(Participant)
-        .$promise
-        .then(function(item) {
-          return item;
-        });
-
-    }
-
-    function DeleteParticipant(id) {
-
-      return Participant
         .deleteById({
           id: id
         })
