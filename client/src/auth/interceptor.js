@@ -12,13 +12,13 @@
 
     return {
       responseError: function(rejection) {
-        // console.log(rejection);
+        console.log("rejection",rejection);
         if (rejection.status === 401 && !rejection.config.IsSignIn) {
-          var User = $injector.get('User');
-          User.logout();
+        console.log("rejection2",rejection);
+          localStorage.clear();
           var $state = $injector.get('$state');
           $state.go('auth.login', {
-            ref: "au"
+            ref: "SESSIONEND"
           });
         }
         return $q.reject(rejection);

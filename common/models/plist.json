@@ -13,15 +13,14 @@
     "CreatedAt": {
       "type": "date",
       "required": false
+    },
+    "Participants": {
+      "type": "array",
+      "required": false
     }
   },
   "validations": [],
-  "relations": {
-    "participants": {
-      "type": "hasMany",
-      "model": "Participant"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

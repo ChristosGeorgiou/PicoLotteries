@@ -26,9 +26,11 @@
           .GetPlist(ModalParams.ID)
           .then(function(data) {
             vm.Plist = data;
+
             if (vm.Plist.Participants.length === 0) {
               vm.AddParticipants();
             }
+
           })
           .finally(function() {
             vm.loading = false;
@@ -49,9 +51,11 @@
     }
 
     function Save() {
+      vm.loading = true;
       PlistsService
-        .SavePlist(vm.Plist)
+        .SavePlist(angular.copy(vm.Plist))
         .then(function() {
+          vm.loading = false;
           $modalInstance.close();
         });
     }

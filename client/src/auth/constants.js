@@ -4,7 +4,7 @@
   angular
     .module('app.auth')
     .constant('LoginMessages', {
-      ANAUTHORIZED: {
+      SESSIONEND: {
         Type: "danger",
         Message: "You were signed out",
         Details: "Probably your session was timed out",

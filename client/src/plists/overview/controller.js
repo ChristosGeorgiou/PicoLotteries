@@ -21,10 +21,10 @@
       vm.LoadPlists();
     }
 
-    function LoadPlists() {
+    function LoadPlists(params) {
       vm.loading = true;
       PlistsService
-        .GetPlists()
+        .GetPlists(params)
         .then(function(plists) {
           vm.Plists = plists;
         })

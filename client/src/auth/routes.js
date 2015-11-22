@@ -48,7 +48,7 @@
             .finally(function() {
               localStorage.clear();
               $state.go("auth.login", {
-                ref: "so"
+                ref: "SIGNOUT"
               });
             })
 

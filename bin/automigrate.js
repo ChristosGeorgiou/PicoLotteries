@@ -10,7 +10,6 @@ ds.automigrate([
   "RoleMapping",
   "Role",
   "Lottery",
-  "Participant",
   "Plist",
 ], function(err) {
   if (err) throw err;

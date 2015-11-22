@@ -16,20 +16,9 @@
 
     function activate() {
 
-      switch ($stateParams.ref) {
-        case "au": //Unauthorized
-          vm.Alert = LoginMessages.UNAUTHORIZED;
-          break;
-        case "so": //Sign Out
-          vm.Alert = LoginMessages.SIGNOUT;
-          break;
-        case "re": //registered
-          vm.Alert = LoginMessages.REGISTERED;
-          break;
-        default:
-          break;
+      if ($stateParams.ref) {
+        SignMessage($stateParams.ref.toUpperCase());
       }
-
     }
 
     function SignIn() {
@@ -43,13 +32,13 @@
         .then(function(response) {
           $state.go("app.lotteries.overview");
         }, function(rejection) {
-          console.log("rejection", rejection);
-          vm.Alert = LoginMessages[rejection.error.toUpperCase()];
-        })
-        .finally(function() {
+          SignMessage(rejection.error.toUpperCase());
           vm.loading = false;
         });
-        
+    }
+
+    function SignMessage(CODE) {
+      vm.Alert = LoginMessages[CODE];
     }
 
   }

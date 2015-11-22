@@ -1,5 +1,4 @@
 var angularFilesort = require('gulp-angular-filesort');
-var browserSync = require('browser-sync').create();
 var connectModrewrite = require('connect-modrewrite');
 var concat = require('gulp-concat');
 var gulp = require('gulp');
@@ -15,27 +14,6 @@ var minimatch = require('minimatch');
 gulp.task('default', ['watch']);
 
 gulp.task('watch', ['sass', 'build'], function() {
-
-  // browserSync.init({
-  //   server: {
-  //     baseDir: "./client"
-  //   },
-  //   notify: false,
-  //   reloadOnRestart: true,
-  //   open: false,
-  //   online: false,
-  //   logLevel: "info",
-  //   ui: false,
-  //   middleware: [function(req, res, next) {
-  //     //console.log("REQUEST", req.url);
-  //     if (minimatch(req.url, '**/*.json')) {
-  //       res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  //     }
-  //     next();
-  //   }, connectModrewrite([
-  //     '^[^\\.]*$ /index.html [L]'
-  //   ])]
-  // });
 
   gulp.watch("./scss/**/**.*", ['sass']);
   gulp.watch("./client/src/**/*.js", ['build']);
@@ -53,8 +31,7 @@ gulp.task('sass', function() {
       suffix: ".min",
       extname: ".css"
     }))
-    .pipe(gulp.dest("./client/assets/css"))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(gulp.dest("./client/assets/css"));
 
 });
 
