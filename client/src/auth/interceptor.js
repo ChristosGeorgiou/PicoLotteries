@@ -8,13 +8,12 @@
     .factory('AuthInterceptor', AuthInterceptor);
 
   /* @ngInject */
-  function AuthInterceptor($q, $injector,$cookies) {
+  function AuthInterceptor($q, $injector, $cookies) {
 
     return {
       responseError: function(rejection) {
-        console.log("rejection",rejection);
-        if (rejection.status === 401 && !rejection.config.IsSignIn) {
-        console.log("rejection2",rejection);
+        console.log("rejection", rejection);
+        if (rejection.status === 401 && rejection.config.url != "/api/Users/login") {
           localStorage.clear();
           var $state = $injector.get('$state');
           $state.go('auth.login', {

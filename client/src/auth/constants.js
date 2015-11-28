@@ -29,7 +29,7 @@
         Message: "Service is not available",
         Details: "Please try again later. If the problem insist, contact your system administrator",
       },
-      UNAUTHORIZED: {
+      LOGIN_FAILED: {
         Type: "danger",
         Message: "Name or password is incorrect",
         Details: "Please try again",

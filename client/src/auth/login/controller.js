@@ -27,18 +27,21 @@
       vm.Alert = false;
 
       User
-        .login(vm.credentials)
+        .login(angular.copy(vm.credentials))
         .$promise
         .then(function(response) {
           $state.go("app.lotteries.overview");
         }, function(rejection) {
-          SignMessage(rejection.error.toUpperCase());
+          SignMessage(rejection.data.error.code.toUpperCase());
+        })
+        .finally(function() {
+          vm.credentials.password = null;
           vm.loading = false;
         });
     }
 
-    function SignMessage(CODE) {
-      vm.Alert = LoginMessages[CODE];
+    function SignMessage(code) {
+      vm.Alert = LoginMessages[code];
     }
 
   }
