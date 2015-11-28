@@ -8,8 +8,10 @@
       'ngResource',
       'ngSanitize',
       'ngCookies',
-      
+
       'ui.bootstrap',
       'ui.router',
+      
+      'toaster',
     ]);
 })();

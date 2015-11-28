@@ -6,7 +6,7 @@
     .controller('SettingsController', SettingsController);
 
   /* @ngInject */
-  function SettingsController(SettingsService, SettingsModals) {
+  function SettingsController($state, SettingsService, SettingsModals) {
     var vm = this;
 
     vm.ChangePassword = ChangePassword;
