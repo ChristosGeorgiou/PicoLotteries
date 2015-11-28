@@ -10,7 +10,6 @@
     var vm = this;
 
     vm.AddLottery = AddLottery;
-    vm.DeleteLottery = DeleteLottery;
     vm.LoadLotteries = LoadLotteries;
 
     activate();
@@ -40,14 +39,6 @@
               ID: id
             });
           }
-        });
-    }
-
-    function DeleteLottery(lottery) {
-      LotteriesService
-        .DeleteLottery(lottery)
-        .then(function() {
-          vm.LoadLotteries();
         });
     }
 

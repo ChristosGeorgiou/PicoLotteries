@@ -6,10 +6,11 @@
     .controller('LotteryController', LotteryController);
 
   /* @ngInject */
-  function LotteryController(LotteriesService, $stateParams) {
+  function LotteryController($state, LotteriesService, $stateParams) {
     var vm = this;
 
     vm.LoadLottery = LoadLottery;
+    vm.DeleteLottery = DeleteLottery;
 
     activate();
 
@@ -26,6 +27,15 @@
         })
         .finally(function() {
           vm.loading = false;
+        });
+    }
+
+    function DeleteLottery() {
+      vm.loading = true;
+      LotteriesService
+        .DeleteLottery(vm.Lottery.id)
+        .then(function() {
+          $state.go("app.lotteries.overview");
         });
     }
 
