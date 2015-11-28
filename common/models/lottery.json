@@ -24,5 +24,12 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {},
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "CreatedAt",
+      "updatedAt": "UpdatedAt",
+      "required": false
+    }
+  }
 }

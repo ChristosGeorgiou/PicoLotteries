@@ -28,12 +28,6 @@
         },
         templateUrl: "src/auth/login/view.html",
         controller: "AuthLoginController",
-        data: {
-          permissions: {
-            only: ['Anonymous'],
-            redirectTo: "app.lotteries.overview"
-          }
-        }
       }
     }, {
       state: 'auth.logout',

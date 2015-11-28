@@ -17,12 +17,6 @@
       config: {
         abstract: true,
         template: '<ui-view/>',
-        data: {
-          permissions: {
-            except: ['Anonymous'],
-            redirectTo: "auth.login"
-          }
-        }
       }
     }, {
       state: 'app.lotteries.overview',

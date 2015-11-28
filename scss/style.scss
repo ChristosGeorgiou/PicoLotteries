@@ -1,4 +1,4 @@
-$colorPrimary: #283593;
+$colorPrimary: #333;
 @import "components/navbar";
 @import "components/buttons";
 @import "components/panel";
@@ -24,6 +24,9 @@ footer {
 }
 section {
   min-height: 400px;
+}
+a {
+  // color: $colorPrimary;
 }
 .navbar {
   margin: 0 0 7px;

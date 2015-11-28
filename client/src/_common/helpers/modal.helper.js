@@ -12,9 +12,8 @@
     /* jshint validthis:true */
     this.$get = modalHelper;
 
-    modalHelper.$inject = ['$uibModal', '$q', 'toaster'];
-
-    function modalHelper($uibModal, $q, toaster) {
+    /* @ngInject */
+    function modalHelper($uibModal, $q) {
 
       var service = {
         configureModals: configureModals

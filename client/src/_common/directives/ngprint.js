@@ -6,8 +6,7 @@
     .module('app._common')
     .directive('ngPrint', ngPrint)
 
-  ngPrint.$inject = []
-
+  /* @ngInject */
   function ngPrint() {
     var printSection = document.getElementById('printSection');
     // if there is no printing section, create one
@@ -31,7 +30,7 @@
       };
       var afterPrint = function() {
         console.log('Functionality to run after printing');
-          printSection.innerHTML = '';
+        printSection.innerHTML = '';
       };
 
       if (window.matchMedia) {

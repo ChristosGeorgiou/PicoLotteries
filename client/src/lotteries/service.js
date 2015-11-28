@@ -7,92 +7,65 @@
     .factory('LotteriesService', LotteriesService);
 
   /* @ngInject */
-  function LotteriesService($resource) {
+  function LotteriesService($resource, Lottery) {
 
     var service = {
-      _total: null,
-      _limit: 10,
-      _offset: 0,
       GetLotteries: GetLotteries,
       GetLottery: GetLottery,
       SaveLottery: SaveLottery,
       DeleteLottery: DeleteLottery,
-      NextPage: NextPage,
-      PreviousPage: PreviousPage,
-      HasPages: HasPages,
     }
 
     return service;
 
-    function NextPage() {
-      service._offset = ((service._offset / service._limit) + 1) * service._limit;
-    }
-
-    function PreviousPage() {
-      service._offset = ((service._offset / service._limit) - 1) * service._limit;
-    }
-
-    function HasPages() {
-      return {
-        Previous: (service._offset !== 0),
-        Next: (service._total - service._offset > service._limit),
-      }
-    }
-
-    function GetLotteries() {
-
-      return $resource(APP.Service + "_design/models/_view/lotteries")
-        .get({
-          limit: service._limit,
-          skip: service._offset,
+    function GetLotteries(params) {
+      var params = params || {};
+      return Lottery
+        .find({
+          filter: {
+            order: params.order || "CreatedAt DESC",
+          },
         })
         .$promise
         .then(function(data) {
-          service._total = data.total_rows;
-          return _.chain(data.rows)
-            .map(function(item) {
-              return item.value;
-            })
-            .sortBy(function(item) {
-              return item.DrewAt || 0;
-            })
-            .reverse()
-            .value();
+          return data;
         });
     }
 
-
     function GetLottery(id) {
-      return $resource(APP.Service + id)
-        .get()
+      return Lottery
+        .findById({
+          id: id
+        })
         .$promise
-        .then(function(data) {
-          return data;
+        .then(function(item) {
+          return item;
         });
     }
 
     function SaveLottery(lottery) {
 
-      lottery.Type = "Lottery";
       lottery.DrewAt = new Date();
-      lottery.Participants = _.shuffle(lottery.Participants);
-
-      return $resource(APP.Service)
-        .save(lottery)
+      return Lottery
+        .create(lottery)
         .$promise
-        .then(function(data) {
-          return data;
+        .then(function(item) {
+          return item;
         });
+
     }
 
-    function DeleteLottery(lottery) {
+    function DeleteLottery(id) {
 
-      lottery._deleted = true;
-      lottery.DeletedAt = new Date();
+      return Lottery
+        .deleteById({
+          id: id
+        })
+        .$promise
+        .then(function(item) {
+          return item;
+        });
 
-      return $resource(APP.Service)
-        .save(lottery)
-        .$promise;
     }
 
   }

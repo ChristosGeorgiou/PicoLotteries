@@ -52,11 +52,12 @@
     }
 
     function DeletePlist(id) {
-      PlistsService
-        .DeletePlist(id)
-        .then(function() {
-          vm.LoadPlists();
-        });
+      console.log("DELE");
+      // PlistsService
+      //   .DeletePlist(id)
+      //   .then(function() {
+      //     vm.LoadPlists();
+      //   });
     }
 
   }

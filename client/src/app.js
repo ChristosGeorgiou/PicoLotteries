@@ -9,7 +9,6 @@
     'app.settings',
     'app._common',
 
-
   ]);
 
 }());

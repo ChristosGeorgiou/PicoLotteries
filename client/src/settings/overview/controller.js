@@ -6,7 +6,7 @@
     .controller('SettingsController', SettingsController);
 
   /* @ngInject */
-  function SettingsController(SettingsService, toaster) {
+  function SettingsController(SettingsService) {
     var vm = this;
 
     activate();

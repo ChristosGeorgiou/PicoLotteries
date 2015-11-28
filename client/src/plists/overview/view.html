@@ -29,7 +29,7 @@
 
     <div class="list-group" ng-if="vm.Plists.length">
       <div class="list-group-item" ng-repeat="Plist in vm.Plists">
-        <a href="" ng-click="vm.DeletePlist(Plist.id)" class="text-danger pull-right"><i class="fa fa-trash"></i></button>
+        <button ng-confirm-click class="text-danger pull-right"><i class="fa fa-trash"></i></button>
         <a href="" ng-click="vm.ViewPlist(Plist.id)">
           <h4 class="list-group-item-heading">{{::Plist.Name}}</h4>
         </a>

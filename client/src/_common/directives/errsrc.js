@@ -6,12 +6,11 @@
     .module('app._common')
     .directive('errSrc', errSrc)
 
-  errSrc.$inject = []
-
+  /* @ngInject */
   function errSrc() {
     return {
       link: function(scope, element, attrs) {
-        if(!attrs.ngSrc){
+        if (!attrs.ngSrc) {
           attrs.$set('src', attrs.errSrc);
         }
 

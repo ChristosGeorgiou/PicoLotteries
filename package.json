@@ -1,21 +1,22 @@
 {
-  "name": "PicoLotteries",
-  "description": "With this pico application you an manage and perform draws of lotteries.",
-  "version": "0.2.2",
+  "name": "lotteries",
+  "description": "Make simple lotteries draws",
+  "version": "0.3.0",
   "main": "server/server.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChristosGeorgiou/PicoLotteries.git"
+    "url": "https://github.com/ChristosGeorgiou/lotteries.git"
   },
   "dependencies": {
     "compression": "^1.0.3",
+    "connect-modrewrite": "^0.8.2",
     "cors": "^2.5.2",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
-    "loopback-connector-mysql": "^2.2.0",
+    "loopback-connector-sqlite": "^1.1.0",
     "loopback-datasource-juggler": "^2.39.0",
-    "connect-modrewrite": "^0.8.2",
+    "loopback-ds-timestamp-mixin": "^3.2.2",
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {

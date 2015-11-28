@@ -18,12 +18,6 @@
         url: '/settings',
         controller: "SettingsController",
         templateUrl: 'src/settings/overview/view.html',
-        data: {
-          permissions: {
-            except: ['Anonymous'],
-            redirectTo: "auth.login"
-          }
-        }
       }
     }];
   }

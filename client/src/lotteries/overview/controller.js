@@ -6,7 +6,7 @@
     .controller('LotteriesController', LotteriesController);
 
   /* @ngInject */
-  function LotteriesController(LotteriesService, LotteriesModals, toaster, $state) {
+  function LotteriesController($state, LotteriesService, LotteriesModals) {
     var vm = this;
 
     vm.AddLottery = AddLottery;
