@@ -12,7 +12,6 @@
 
     vm.AddPlist = AddPlist;
     vm.ViewPlist = ViewPlist;
-    vm.DeletePlist = DeletePlist;
     vm.LoadPlists = LoadPlists;
 
     activate();
@@ -49,15 +48,6 @@
         .then(function() {
           vm.LoadPlists();
         });
-    }
-
-    function DeletePlist(id) {
-      console.log("DELE");
-      // PlistsService
-      //   .DeletePlist(id)
-      //   .then(function() {
-      //     vm.LoadPlists();
-      //   });
     }
 
   }

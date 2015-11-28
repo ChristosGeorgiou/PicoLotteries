@@ -52,8 +52,19 @@ $buttonColors: primary $colorPrimary, info #49AFCD, success #5BB75B, warning #FA
   }
 }
 @each $className in $buttonColors {
+  $buttonColor: nth($className, 2);
   .btn-#{nth($className, 1)} {
-    $buttonColor: nth($className, 2);
     @include button-variant(#FFF, $buttonColor, darken($buttonColor, 10%));
   }
+  .btn-#{nth($className, 1)}.btn-outline {
+    color: $buttonColor;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.btn-outline {
+  background-color: transparent;
+  color: inherit;
+  transition: all 0.5s;
 }

@@ -10,20 +10,23 @@
     var vm = this;
 
     vm.Plist = {
+      id: ModalParams.ID || null,
       Participants: [],
     };
 
     vm.AddParticipants = AddParticipants;
+    vm.AddParticipants = AddParticipants;
     vm.RemoveParticipant = RemoveParticipant;
     vm.Save = Save;
+    vm.Delete = Delete;
 
     activate();
 
     function activate() {
-      if (ModalParams.ID) {
+      if (vm.Plist.id) {
         vm.loading = true;
         PlistsService
-          .GetPlist(ModalParams.ID)
+          .GetPlist(vm.Plist.id)
           .then(function(data) {
             vm.Plist = data;
 
@@ -54,6 +57,17 @@
       vm.loading = true;
       PlistsService
         .SavePlist(angular.copy(vm.Plist))
+        .then(function() {
+          vm.loading = false;
+          $modalInstance.close();
+        });
+    }
+
+
+    function Delete() {
+      vm.loading = true;
+      PlistsService
+        .DeletePlist(vm.Plist.id)
         .then(function() {
           vm.loading = false;
           $modalInstance.close();

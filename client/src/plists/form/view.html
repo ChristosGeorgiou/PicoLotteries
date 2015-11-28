@@ -57,6 +57,7 @@
   </div>
 
   <div class="modal-footer">
+    <button ng-if="vm.Plist.id" class="btn btn-danger btn-outline btn-sm pull-left" ng-click="vm.Delete()" type="button">Delete</button>
     <button class="btn btn-default btn-sm" ng-click="$close()" type="button">Cancel</button>
     <button class="btn btn-success btn-sm" type="submit"><i class="fa fa-floppy-o"></i> Save List</button>
   </div>
