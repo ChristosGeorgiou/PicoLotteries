@@ -9,9 +9,10 @@
     "url": "https://github.com/ChristosGeorgiou/lotteries.git"
   },
   "dependencies": {
-    "compression": "^1.0.3",
+    "compression": "^1.6.0",
     "connect-modrewrite": "^0.8.2",
     "cors": "^2.5.2",
+    "helmet": "^0.15.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-connector-sqlite": "^1.1.0",
