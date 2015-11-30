@@ -1,7 +1,7 @@
 .panel-primary {
   .panel-heading {
-    background: $colorPrimary;
-    border-color: darken($colorPrimary, 10%);
+    background: $color-primary;
+    border-color: darken($color-primary, 10%);
   }
 }
 .panel-lg {
@@ -10,11 +10,11 @@
     min-width: 180px;
     line-height: 0.9em;
     padding:15px 15px 10px;
-    border-right: solid 1px darken($colorPrimary,5%);
+    border-right: solid 1px darken($color-primary,5%);
     small {
       display: block;
       font-size: 10px;
-      color: lighten($colorPrimary,35%);
+      color: lighten($color-primary,35%);
     }
     i {
       float: left;

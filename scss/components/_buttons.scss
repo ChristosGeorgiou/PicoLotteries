@@ -1,4 +1,4 @@
-$buttonColors: primary $colorPrimary, info #49AFCD, success #5BB75B, warning #FAA732, danger #DA4F49, inverse #363636;
+$buttonColors: primary $color-primary, info #49AFCD, success #5BB75B, warning #FAA732, danger #DA4F49, inverse #363636;
 @mixin button-variant($color, $background, $border) {
   color: $color;
   background-color: $background;
@@ -58,7 +58,8 @@ $buttonColors: primary $colorPrimary, info #49AFCD, success #5BB75B, warning #FA
   }
   .btn-#{nth($className, 1)}.btn-outline {
     color: $buttonColor;
-    &:hover {
+    &:hover,
+    &:focus {
       color: #fff;
     }
   }

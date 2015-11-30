@@ -1,9 +1,10 @@
-$colorPrimary: #333;
+$color-primary: #333;
 @import "components/navbar";
 @import "components/buttons";
 @import "components/panel";
 @import "components/loading";
 @import "components/print";
+@import "components/empty";
 body {
   padding-bottom: 20px;
   background: #FAFAFA;
@@ -12,6 +13,7 @@ body {
   }
 }
 footer {
+  margin-top: 15px;
   p {
     display: block;
     text-align: center;
@@ -27,39 +29,17 @@ section {
 }
 a {
 
-  // color: $colorPrimary;
+  // color: $color-primary;
 }
 textarea:focus,
 input:focus,
 .form-control:focus {
-  border-color: opacify(lighten($colorPrimary,20%), 0.8);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px opacify(lighten($colorPrimary,20%), 0.6);
+  border-color: opacify(lighten($color-primary,20%), 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px opacify(lighten($color-primary,20%), 0.6);
   outline: 0 none;
 }
 .container {
   min-width: 320px;
-}
-.navbar {
-  margin: 0 0 7px;
-  .navbar-brand {
-    color: #EEE !important;
-    min-width: 180px;
-    line-height: 0.9em;
-    padding-top: 13px;
-    padding-bottom: 5px;
-    border-right: solid 1px darken($colorPrimary,5%);
-    small {
-      display: block;
-      font-size: 10px;
-      color: lighten($colorPrimary,35%);
-    }
-    i {
-      float: left;
-      margin: -2px 2px 0 -8px;
-      font-size: 1.8em;
-      color: #FAFAFA;
-    }
-  }
 }
 @media (min-width: 768px) {
   .container {
@@ -80,15 +60,6 @@ input:focus,
   .btn-group:first-child {
     margin-left: 0;
   }
-}
-.empty {
-  text-align: center;
-  font-size: 2em;
-  background: #EEE;
-  border: solid 1px #DDD;
-  border-radius: 5px;
-  padding: 25px 0;
-  color: #AAA;
 }
 .input-xs {
   padding: 0 5px;
