@@ -8,8 +8,8 @@
         <span class="icon-bar"></span>
       </button>
       <div class="navbar-brand">
-        <i class="fa fa-tags fa-fw"></i> Lotteries
-        <small>v0.3.0 by CG</small>
+        <i class="fa fa-tags fa-fw"></i> {{APP.name | uppercase}}
+        <small>v{{APP.version}}</small>
       </div>
     </div>
 
@@ -44,6 +44,10 @@
 
 <section ui-view class="container"></section>
 
-<footer class="container">
-  <p ng-include="'src/_common/views/footer.html'"></p>
+<footer class="container text-center">
+  <ul class="list-inline">
+    <li>2016 {{APP.name | uppercase}} v{{APP.version}}</li>
+    <li>By <a href="{{APP.author.url}}">{{APP.author.name}}</a></li>
+    <li>Repo: <a href="{{APP.repository}}">GitHub</a></li>
+  </ul>
 </footer>

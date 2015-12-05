@@ -1,15 +1,17 @@
+var fs = require('fs');
+var pkg = require('./package.json');
 var angularFilesort = require('gulp-angular-filesort');
-var connectModrewrite = require('connect-modrewrite');
 var concat = require('gulp-concat');
+var connectModrewrite = require('connect-modrewrite');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var minify = require('gulp-clean-css');
+var minimatch = require('minimatch');
 var ngAnnotate = require('gulp-ng-annotate');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
-var minimatch = require('minimatch');
 
 gulp.task('default', ['watch']);
 
@@ -35,7 +37,7 @@ gulp.task('sass', function() {
 
 });
 
-gulp.task('build', function() {
+gulp.task('build', ['config'], function() {
 
   return gulp.src("./client/src/**/*.js")
     .pipe(angularFilesort())
@@ -51,5 +53,20 @@ gulp.task('build', function() {
     }))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest("./client/assets/scripts"));
+
+});
+
+gulp.task('config', function() {
+
+  return fs.writeFile(
+    "./client/src/config.js",
+    "(function() { window.APP=" + JSON.stringify({
+      name: pkg.name,
+      description: pkg.description,
+      version: pkg.version,
+      repository: pkg.repository,
+      author: pkg.author,
+    }) + "; })()"
+  );
 
 });

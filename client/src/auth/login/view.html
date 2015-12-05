@@ -2,9 +2,8 @@
   <div class="panel panel-primary panel-lg">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <i class="fa fa-tags fa-fw"></i>
-        Lotteries
-        <small>v0.3.0</small>
+        <i class="fa fa-tags fa-fw"></i> {{APP.name | uppercase}}
+        <small>v{{APP.version}}</small>
       </h3>
     </div>
     <form class="panel-body" ng-class="{loading: vm.loading}" ng-submit="vm.SignIn()" role="form">
@@ -25,7 +24,11 @@
     </form>
   </div>
   <div class="text-center text-muted">
-    <small ng-include="'src/_common/views/footer.html'"></small>
+    <ul class="list-inline">
+      <li>{{2016}} {{APP.name | uppercase}} v{{APP.version}}</li>
+      <li>By <a href="{{APP.author.url}}">{{APP.author.name}}</a></li>
+      <li>Repo: <a href="{{APP.repository}}">GitHub</a></li>
+    </ul>
   </div>
 
 </section>

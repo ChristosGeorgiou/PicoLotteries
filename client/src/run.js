@@ -9,6 +9,7 @@
   /* @ngInject */
   function appRun($rootScope, $state, $stateParams) {
 
+    $rootScope.APP = APP;
     $rootScope.$on('$stateChangeStart', function(evt, to, params) {
 
       if (to.redirectTo) {
@@ -17,7 +18,7 @@
       }
 
     });
-    
+
   }
 
 }());
