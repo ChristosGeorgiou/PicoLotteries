@@ -10,50 +10,16 @@
 <form ng-submit="vm.Save()" ng-class="{loading:vm.loading}">
 
   <div class="modal-body">
+
     <div class="form-group">
       <label class="control-label">List Name</label>
       <input class="form-control" ng-model="vm.Plist.Name" required/>
     </div>
+
     <div class="form-group">
       <label class="control-label">Participants</label>
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th class="col-md-1">A/A</th>
-            <th class="col-md-5">Name</th>
-            <th class="col-md-5">Email</th>
-            <th class="col-md-1"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr ng-repeat="Participant in vm.Plist.Participants">
-            <td class="text-center">
-              {{$index + 1}}.
-            </td>
-            <td>
-              <input class="form-control input-xs" ng-model="Participant.Name" />
-            </td>
-            <td>
-              <input class="form-control input-xs" ng-model="Participant.Email" />
-            </td>
-            <td class="text-center">
-              <a href="" type="button" tabindex="-1" ng-click="vm.RemoveParticipant($index)"><i class="fa fa-times text-danger"></i></a>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="4">
-              <button type="button" class="btn btn-default btn-xs pull-right" ng-click="vm.AddParticipants()">
-                <i class="fa fa-plus"></i> Add More
-              </button>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+      <textarea class="form-control" ng-model="vm.Plist.Participants" ng-list="&#10;" ng-trim="false"  rows="7" required></textarea>
     </div>
-
   </div>
 
   <div class="modal-footer">

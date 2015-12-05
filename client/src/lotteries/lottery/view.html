@@ -24,6 +24,7 @@
         <button class="btn btn-sm btn-primary btn-block" ng-print print-element-id="printableResults">
           Print Draw
         </button>
+        <hr/>
         <button class="btn btn-sm btn-danger btn-outline btn-block" ng-click="vm.DeleteLottery()">
           Delete Lottery
         </button>
@@ -41,7 +42,7 @@
       </div>
       <div class="list-group" ng-if="vm.Lottery">
         <div class="list-group-item" ng-repeat="Participant in vm.Lottery.Participants">
-          {{$index+1}}. {{::Participant.Name}}, {{::Participant.Email}}
+          {{$index+1}}. {{::Participant}}
         </div>
       </div>
     </div>
@@ -51,24 +52,14 @@
 </div>
 
 <div id="printableResults" class="visible-print-block">
-  <div class="page-header">
-    <h2>{{::vm.Lottery.Name}}
-      <small>{{::vm.Lottery.DrewAt|date:'medium'}}</small>
-    </h2>
-  </div>
+  <h4>
+    {{::vm.Lottery.Name}}
+    <small>{{::vm.Lottery.DrewAt|date:'medium'}}</small>
+  </h4>
   <table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>A/A</th>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-    </thead>
     <tbody>
       <tr ng-repeat="Participant in vm.Lottery.Participants">
-        <td>{{$index+1}}</td>
-        <td>{{::Participant.Name}}</td>
-        <td>{{::Participant.Email}}</td>
+        <td>{{$index+1}}. {{::Participant}}</td>
       </tr>
     </tbody>
   </table>

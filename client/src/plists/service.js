@@ -49,10 +49,6 @@
         plist.CreatedAt = new Date();
       }
 
-      plist.Participants = _.filter(plist.Participants, function(item) {
-        return (item.Name || item.Email);
-      });
-
       return Plist
         .updateOrCreate(plist)
         .$promise

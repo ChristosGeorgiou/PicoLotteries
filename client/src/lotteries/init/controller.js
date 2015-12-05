@@ -10,7 +10,7 @@
     var vm = this;
 
     vm.Lottery = {
-      Name: "Lottery #" + Math.floor((Math.random() * 99999) + 10000),
+      Name: "Lottery #" + (new Date()).getTime(),
     };
 
     vm.LoadPlists = LoadPlists;

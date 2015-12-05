@@ -1,12 +1,17 @@
 {
   "name": "lotteries",
   "description": "Make simple lotteries draws",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "server/server.js",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/ChristosGeorgiou/lotteries.git"
+  },
+  "author": {
+    "name": "Christos Georgiou",
+    "email": "xris.georgiou@gmail.com",
+    "url": "http://christosgeorgiou.gr"
   },
   "dependencies": {
     "compression": "^1.6.0",
