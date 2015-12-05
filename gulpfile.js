@@ -61,7 +61,7 @@ gulp.task('config', function() {
   return fs.writeFile(
     "./client/src/config.js",
     "(function() { window.APP=" + JSON.stringify({
-      name: pkg.name,
+      name: pkg.name.charAt(0).toUpperCase() + pkg.name.slice(1),
       description: pkg.description,
       version: pkg.version,
       repository: pkg.repository,
