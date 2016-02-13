@@ -46,6 +46,8 @@
     function SaveLottery(lottery) {
 
       lottery.DrewAt = new Date();
+      lottery.Participants = _.shuffle(lottery.Participants);
+      
       return Lottery
         .create(lottery)
         .$promise

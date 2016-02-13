@@ -1,7 +1,7 @@
 {
   "name": "lotteries",
   "description": "Make simple lotteries draws",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "server/server.js",
   "license": "MIT",
   "repository": "https://github.com/ChristosGeorgiou/lotteries.git",

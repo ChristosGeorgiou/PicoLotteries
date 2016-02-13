@@ -1,1 +1,1 @@
-(function() { window.APP={"name":"Lotteries","description":"Make simple lotteries draws","version":"0.4.1","repository":"https://github.com/ChristosGeorgiou/lotteries.git","author":{"name":"Christos Georgiou","email":"xris.georgiou@gmail.com","url":"http://christosgeorgiou.gr"}}; })()
+(function() { window.APP={"name":"Lotteries","description":"Make simple lotteries draws","version":"0.4.2","repository":"https://github.com/ChristosGeorgiou/lotteries.git","author":{"name":"Christos Georgiou","email":"xris.georgiou@gmail.com","url":"http://christosgeorgiou.gr"}}; })()
