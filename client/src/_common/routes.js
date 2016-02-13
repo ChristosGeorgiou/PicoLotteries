@@ -6,8 +6,7 @@
     .module('app._common')
     .run(RoutesConfig);
 
-  RoutesConfig.$inject = ['configHelper', 'routerHelper'];
-
+  /* @ngInject */
   function RoutesConfig(configHelper, routerHelper) {
 
     var _states = getStates();
